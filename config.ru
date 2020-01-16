@@ -5,4 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use ShoppinglistController
+use GamesController
+use UsersController
+use ShoppinglistgamesController
 run ApplicationController
