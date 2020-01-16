@@ -1,6 +1,6 @@
 class CreateShoppinglist < ActiveRecord::Migration
   def change
-    create_table :shoppinglist do |t|
+    create_table :shoppinglists do |t|
       t.string :name
       t.string :title
       t.string :image

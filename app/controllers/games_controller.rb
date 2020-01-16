@@ -1,5 +1,5 @@
-class Games < ApplicationController
+class GamesController < ApplicationController
 
 
-    
+
 end

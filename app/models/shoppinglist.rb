@@ -1,4 +1,4 @@
 class Shoppinglist < ActiveRecord::Base
     belongs_to :user
-    belongs_to :shoppinglistgames
+    belongs_to :shoppinglistgame
 end

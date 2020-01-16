@@ -1,4 +1,4 @@
-class Shoppinglistgames < ApplicationController
+class ShoppinglistgamesController < ApplicationController
 
     
 end
