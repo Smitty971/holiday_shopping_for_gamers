@@ -11,24 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200115183701) do
+ActiveRecord::Schema.define(version: 20200115183329) do
 
   create_table "games", force: :cascade do |t|
     t.string "type"
     t.string "title"
     t.string "rating"
-  end
-
-  create_table "shoppinglistgames", force: :cascade do |t|
-    t.integer "shoppinglist_id"
-    t.integer "games_id"
-  end
-
-  create_table "shoppinglists", force: :cascade do |t|
-    t.string  "name"
-    t.string  "title"
-    t.string  "image"
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
