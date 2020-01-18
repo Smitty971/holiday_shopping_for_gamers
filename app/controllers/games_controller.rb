@@ -12,7 +12,8 @@ class GamesController < ApplicationController
     post '/games' do 
         game = Game.new(params)
         game.save
-        if !game.title.empty? && !game.type.empty? && !game.rating.empty?
+
+        if !game.title.empty? && !game.genre.empty?
             game.save
             redirect '/games'
         else
@@ -25,8 +26,14 @@ class GamesController < ApplicationController
     #read
 
     get '/games' do
-        @games = Game.all
+        @games = Game.all.reverse
         erb :'games/index'
     end
 
+    #update 
+
+    get '/games/:id/edit' do 
+        @games= Game.find(params["id"])
+        erb :'/games/edit'
+    end
 end

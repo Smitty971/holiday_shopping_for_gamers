@@ -1,6 +1,6 @@
-<h1>Create a Shopping List<h1>
+<h1>Edit Shopping List<h1>
 <p><%= @error %></p>
-<form action="/games" method="post">
+<form action="/games/<%=@game.id%>%" method="post">
     <label>TItle</label>
     <input type="text" name="title"> 
     <label>Type</label>
@@ -8,6 +8,6 @@
     <label>Rating</label>
     <input type="text" name="rating">
     <br>
-    <button type="submit">Add List</button>
+    <button type="submit">Edit List</button>
 
 </form>
