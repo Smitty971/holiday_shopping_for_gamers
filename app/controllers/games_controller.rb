@@ -7,17 +7,27 @@ class GamesController < ApplicationController
         erb :'/games/new'
     end
     
-    #something here throws an error
+
+    # post '/games' do 
+    #     @game = Game.new(title: params[:title], rating: params[:rating], genre: params[:genre])
+
+    #     if !@game.title.empty? && !@game.genre.empty? && @game.save
+    #         redirect '/games'
+    #     else
+    #         @error = "Data invalid. Please try again"
+    #         erb :'/games/new'
+    #     end
+    # end
 
     post '/games' do 
-        @game = Game.new(title: params[:title], rating: params[:rating], genre: params[:genre])
-
-        if !@game.title.empty? && !@game.genre.empty? && @game.save
+        game = Game.new(params)
+        if game.save
             redirect '/games'
         else
             @error = "Data invalid. Please try again"
             erb :'/games/new'
         end
+
     end
 
 

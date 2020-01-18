@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20200115183329) do
     t.string "genre"
     t.string "title"
     t.string "rating"
+    t.string "list_name"
   end
 
   create_table "users", force: :cascade do |t|

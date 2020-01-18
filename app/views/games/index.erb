@@ -1,6 +1,7 @@
 <h1>Games</h1>
 <a href="/games/new">Create a List</a>
 <% @games.each do |game| %>
+    <h2><%= game.list_name %></h2>
     <h2><%= game.title %></h2>
     <h2><%= game.genre %></h2>
     <h2><%= game.rating %></h2>
