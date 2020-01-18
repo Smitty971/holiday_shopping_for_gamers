@@ -1,10 +1,13 @@
 <h1>Games</h1>
 <a href="/games/new">Create a List</a>
 <% @games.each do |game| %>
-    <h2><%= game.list_name %></h2>
-    <h2><%= game.title %></h2>
+    <h2><a href="/games/<%= game.id %>"><%= game.list_name %></a></h2>
+    <!-- <h2><%= game.title %></h2>
     <h2><%= game.genre %></h2>
     <h2><%= game.rating %></h2>
+    <% if game.user && curent_user == game.user %> -->
+    <button><a href="/game/<%= game.id %>/edit">Edit List</a></button>
+<% end %>
 <% end %>
 
     
