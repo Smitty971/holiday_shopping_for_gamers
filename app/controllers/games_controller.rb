@@ -10,11 +10,9 @@ class GamesController < ApplicationController
     #something here throws an error
 
     post '/games' do 
-        game = Game.new(params)
-        game.save
+        @game = Game.new(title: params[:title], rating: params[:rating], genre: params[:genre])
 
-        if !game.title.empty? && !game.genre.empty?
-            game.save
+        if !@game.title.empty? && !@game.genre.empty? && @game.save
             redirect '/games'
         else
             @error = "Data invalid. Please try again"
