@@ -11,6 +11,7 @@ class GamesController < ApplicationController
 
     post '/games' do 
         game = Game.new(params)
+        game.user = current_user
         if game.save
             redirect '/games'
         else
@@ -42,7 +43,7 @@ class GamesController < ApplicationController
 
     get '/games/:id/edit' do 
         @games= Game.find(params["id"])
-        if authorize(@game)
+        if authorize(@games)
             erb :'/games/edit'
         else
             redirect :'/games'
@@ -51,7 +52,7 @@ class GamesController < ApplicationController
 
     
     
-    patch '/recipes/:id' do
+    patch '/games/:id' do
         @game = Game.find(params["id"])
         if authorize(@game)
             game.update(params["game"])
@@ -63,9 +64,9 @@ class GamesController < ApplicationController
 
     #destroy
 
-    delete '/gears/:id' do 
+    delete '/games/:id' do 
         game = Game.find(params[:id])
         game.destroy
-        redirect '/gears'
+        redirect '/games'
     end
 end

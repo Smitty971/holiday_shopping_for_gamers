@@ -29,7 +29,8 @@ class ApplicationController < Sinatra::Base
 
 
   def authorize(game)
-    current_user.id == game.user.id
+
+    current_user == game.user
   end
 
 end
