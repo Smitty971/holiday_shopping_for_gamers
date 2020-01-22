@@ -3,11 +3,11 @@
 <form action="/games/<%=@games.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label>Title</label>
-    <input type="text" name="title" value="<%= @games.title %>"> 
+    <input type="text" name="games[title]" value="<%= @games.title %>"> 
     <label>Type</label>
-    <input type="text" name="genre" value="<%= @games.genre%>">
+    <input type="text" name="games[genre]" value="<%= @games.genre%>">
     <label>Rating</label>
-    <input type="text" name="rating" value="<%= @games.rating%>">
+    <input type="text" name="games[rating]" value="<%= @games.rating%>">
     <br>
     <button type="submit">Edit List</button>
 

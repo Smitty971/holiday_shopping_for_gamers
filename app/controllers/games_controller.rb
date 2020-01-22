@@ -55,7 +55,8 @@ class GamesController < ApplicationController
     patch '/games/:id' do
         @game = Game.find(params["id"])
         if authorize(@game)
-            game.update(params["game"])
+            #binding.pry
+            @game.update(params["games"])
             redirect "/games/#{params[:id]}"
         else
             redirect '/games/:id'
