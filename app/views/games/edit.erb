@@ -1,13 +1,13 @@
 <h1>Edit Your Shopping List<h1>
 <p><%= @error %></p>
-<form action="/games/<%=@games.id%>" method="post">
+<form action="/games/<%=@game.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label>Title</label>
-    <input type="text" name="games[title]" value="<%= @games.title %>"> 
+    <input type="text" name="games[title]" value="<%= @game.title %>"> 
     <label>Type</label>
-    <input type="text" name="games[genre]" value="<%= @games.genre%>">
+    <input type="text" name="games[genre]" value="<%= @game.genre%>">
     <label>Rating</label>
-    <input type="text" name="games[rating]" value="<%= @games.rating%>">
+    <input type="text" name="games[rating]" value="<%= @game.rating%>">
     <br>
     <button type="submit">Edit List</button>
 

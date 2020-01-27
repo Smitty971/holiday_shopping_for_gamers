@@ -42,31 +42,26 @@ class GamesController < ApplicationController
     #update 
 
     get '/games/:id/edit' do 
-        @games= Game.find(params["id"])
-        if authorize(@games)
+        @game= Game.find(params["id"])
+        authorize
             erb :'/games/edit'
-        else
-            redirect :'/games'
-        end
     end
 
     
     
     patch '/games/:id' do
         @game = Game.find(params["id"])
-        if authorize(@game)
+        authorize
             @game.update(params["games"])
             redirect "/games/#{params[:id]}"
-        else
-            redirect '/games/:id'
-        end
     end
 
     #destroy
 
     delete '/games/:id' do 
-        game = Game.find(params[:id])
-        game.destroy
-        redirect '/games'
+        @game = Game.find(params[:id])
+        authorize 
+            @game.destroy
+            redirect "/games"
     end
 end

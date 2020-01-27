@@ -28,9 +28,10 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  def authorize(game)
-
-    current_user == game.user
+  def authorize
+    if current_user != @game.user
+      redirect '/games'
+    end
   end
 
 end
